@@ -1,0 +1,363 @@
+* {
+    box-sizing: border-box;
+    /*border: black solid 1px;*/
+}
+
+body {
+    font-family: sans-serif;
+    color: #959595;
+}
+
+h1, h2, h3 {
+    margin: 5px 0px;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2, h3{
+    font-size: 1em;
+}
+
+/*Layout*/
+
+/*Header*/
+#header {
+    display: flex;
+    padding: 1.12em;
+}
+
+.headerChild {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    margin-right: auto;
+    font-size: 1.12em;
+}
+
+#notification {
+    width: 32px;
+    border-right: #959595 solid 1px;
+}
+
+#notifBell {
+    width: 24px;
+}
+
+#notifDot {
+    position: relative;
+    top: -12px;
+    left: -6px;
+    background-color: #81ca8f;
+    height: 6px;
+    width: 6px;
+    border-radius: 100%;
+}
+
+/*Header End*/
+
+/*Main*/
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Menu*/
+#menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+#menu img {
+    margin: 3px 5px;
+}
+
+img.icon {
+    width: 32px;   
+}
+
+#memIcon,
+#visitIcon,
+#setIcon {
+    opacity: 0.75;
+}
+/*Menu End*/
+
+/*Content*/
+
+/*Info Banner*/
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#currentPage,
+#searchContain {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+#search input {
+    border-radius: 5px;
+    border: 1px solid #959595;
+    padding: 5px;
+}
+/*Info End*/
+
+/*Data Content*/
+#data {
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Alert Area*/
+#alertMessage {
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#alert,
+#exit {
+    font-weight: 600;
+    padding: 0 7.5px;
+}
+
+/*Social Stats*/
+#socialContain {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+#twitterStats,
+#faceStats,
+#gplusStats {
+    width: 85%;
+    display: flex;
+    padding: 10px;
+    border: 1px solid #959595;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#socialContain h3{
+    align-self: flex-start;
+}
+
+.socialIcon {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background-color: #7477bf;
+    display: flex;
+    margin-right: 5px;
+}
+
+.socialIcon #Layer_1 {
+    margin: auto;
+    width: 32px;
+    height: 32px;
+    fill: #fff;
+}
+/*Social End*/
+
+/*Message User*/
+#messageUser input,
+#messageUser textarea,
+#messageUser button {
+    display: block;
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid #959595;
+    margin: 5px auto;
+    padding: 10px;
+}
+
+button {
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+/*Message End*/
+
+/*Settings*/
+.toggle {
+    width: 50%;
+    font-weight: 600;
+    font-size: .9em;
+    display: flex; 
+    align-items: center;
+    margin-bottom: 5px;
+    margin-left: 2.5%;
+}
+
+#email,
+#public {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #7477bf;
+    color: #fff;
+    height: 30px;
+    width: 75px;
+    border-radius: 30px;  
+    margin-left: auto;
+}
+
+.circle {
+    background-color: #fff;
+    height: 22.5px;
+    width: 22.5px;
+    border-radius: 100%;
+}
+
+#settings select {
+    display: block;
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid #959595;
+    margin: 5px auto;
+    padding: 5px;
+}
+
+
+#buttons {
+    width: 95%;
+    margin: 5px auto;
+}
+
+#settings button {
+    width: 100%;
+    border-radius: 5px;
+    margin: 5px 2.25%;
+    padding: 10px;
+}
+/*Content End*/
+
+/*Colors*/
+#header {
+    color: #fff;
+}
+
+h3 {
+    color: #7477bf;
+}
+
+#your {
+    font-weight: 600;
+}
+#app {
+    font-weight: 100;
+}
+
+#menu {
+    background-color: #4d4d72;
+}
+
+select {
+    color: #959595;
+}
+
+#searchContain,
+#messageUser input,
+textarea,
+select,
+#twitterStats,
+#faceStats,
+#gplusStats {
+    background-color: #fbfbfb;
+}
+
+#cancel {
+    background-color: #b2b2b2;
+}
+
+#header,
+#alertMessage,
+button {
+    background-color: #7477bf;
+}
+
+@media (min-width: 768px) {
+    #main {
+        flex-direction: row;
+    }
+    
+    #menu {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #menu .icon {
+        margin-bottom: 2em;
+    }
+    
+    #data {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    #info {
+        flex-direction: row;
+        justify-content: space-around;
+        height: 75px;
+    }
+    #currentPage {
+        width: 20%;
+    }
+    #searchContain {
+        width: 80%;
+        height: inherit;
+        justify-content: flex-end;
+        border-left: 1px solid #959595;
+        border-bottom: 1px solid #959595;
+    }
+
+    #search input {
+        margin-right: 1em;
+    }   
+    
+    #info,
+    #alertArea,
+    #traffic,
+    #socialStats {
+        width: 100%;
+    }
+    
+    #dayTraffic,
+    #mobileUsers,
+    #newMembers,
+    #recentAct,
+    #messageUser,
+    #settings {
+        width: 50%;
+    }
+    
+    #socialContain {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #twitterStats,
+    #faceStats,
+    #gplusStats {
+        width: 30%;
+    }
+    
+    #settings button {
+        width: 45%;
+    }
+}
