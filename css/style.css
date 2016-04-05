@@ -20,6 +20,12 @@ h2, h3{
     font-size: 1em;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 /*Layout*/
 
 /*Header*/
@@ -40,7 +46,7 @@ h2, h3{
 
 #notification {
     width: 32px;
-    border-right: #959595 solid 1px;
+    border-right: #d2d2d2 solid 1px;
 }
 
 #notifBell {
@@ -55,6 +61,11 @@ h2, h3{
     height: 6px;
     width: 6px;
     border-radius: 100%;
+}
+
+#userPic {
+    border-radius: 100%;
+    margin: 0 5px;
 }
 
 /*Header End*/
@@ -105,20 +116,41 @@ img.icon {
     align-items: center;  
 }
 
+#searchContain {
+    width: 100%;
+}
 
 #search input {
     border-radius: 5px;
-    border: 1px solid #959595;
+    border: 1px solid #d2d2d2;
     padding: 5px;
+}
+
+#searchLogo {
+    height: 16px;
+    width: 16px;
+    position: relative;
+    left: -20px;
 }
 /*Info End*/
 
 /*Data Content*/
 #data {
-    padding: 1em;
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+#alertArea,
+#traffic,
+#dayTraffic,
+#mobileUsers,
+#socialStats,
+#newMembers,
+#recentAct,
+#messageUser,
+#settings {
+    padding: 2.5%;
 }
 
 /*Alert Area*/
@@ -136,6 +168,33 @@ img.icon {
     padding: 0 7.5px;
 }
 
+#exit:hover {
+    cursor: pointer;
+}
+
+/*Traffic*/
+#trafficChart {
+    padding: 1.25%;
+}
+
+ul.doughnut-legend {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul.doughnut-legend span {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    border-radius: 5px;
+    margin-right: 2px;
+}
+
+ul.doughnut-legend li {
+    display: flex;
+    align-items: center;
+}
+
 /*Social Stats*/
 #socialContain {
     display: flex;
@@ -150,13 +209,19 @@ img.icon {
     width: 85%;
     display: flex;
     padding: 10px;
-    border: 1px solid #959595;
+    border: 1px solid #d2d2d2;
     border-radius: 5px;
     margin-bottom: 5px;
 }
 
 #socialContain h3{
     align-self: flex-start;
+    width: 25%;
+}
+
+.socialNum {
+    align-self: center;
+    font-size: 2em;
 }
 
 .socialIcon {
@@ -183,7 +248,7 @@ img.icon {
     display: block;
     width: 95%;
     border-radius: 5px;
-    border: 1px solid #959595;
+    border: 1px solid #d2d2d2;
     margin: 5px auto;
     padding: 10px;
 }
@@ -197,7 +262,7 @@ button {
 
 /*Settings*/
 .toggle {
-    width: 50%;
+    width: 95%;
     font-weight: 600;
     font-size: .9em;
     display: flex; 
@@ -230,15 +295,14 @@ button {
     display: block;
     width: 95%;
     border-radius: 5px;
-    border: 1px solid #959595;
+    border: 1px solid #d2d2d2;
     margin: 5px auto;
     padding: 5px;
 }
 
-
 #buttons {
     width: 95%;
-    margin: 5px auto;
+    margin: 5px 0;
 }
 
 #settings button {
@@ -273,7 +337,6 @@ select {
     color: #959595;
 }
 
-#searchContain,
 #messageUser input,
 textarea,
 select,
@@ -291,6 +354,42 @@ select,
 #alertMessage,
 button {
     background-color: #7477bf;
+}
+
+/*Message Confirmation*/
+#overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#mConfirmation {
+    height: 75%;
+    width: 75%;
+    background-color: #7477bf;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 10px 5px -5px;
+    border: 1px solid #d2d2d2;
+}
+
+#escape {
+    padding: 7.5px 12.5px;
+    color: #fff;
+    font-weight: 600;
+    align-self: flex-end;
+}
+
+#mConfirmation p {
+    padding: 5px;
+    color: #fff;
+    align-self: center;
 }
 
 @media (min-width: 768px) {
@@ -320,15 +419,19 @@ button {
         width: 20%;
     }
     #searchContain {
+        background-color: #fbfbfb;
         width: 80%;
         height: inherit;
         justify-content: flex-end;
-        border-left: 1px solid #959595;
-        border-bottom: 1px solid #959595;
+        border-left: 1px solid #dfdfdf;
+        border-bottom: 1px solid #dfdfdf;
     }
 
-    #search input {
-        margin-right: 1em;
+    #search {
+        margin-right: 16px;
+    }
+    #searchLogo {
+        left: -36px;
     }   
     
     #info,
@@ -347,6 +450,10 @@ button {
         width: 50%;
     }
     
+    ul.doughnut-legend span {
+        margin-right: 8px;
+    }
+    
     #socialContain {
         flex-direction: row;
         justify-content: space-around;
@@ -357,7 +464,29 @@ button {
         width: 30%;
     }
     
+    #mConfirmation {
+        height: 50%;
+        width: 50%;
+    }
+    
+    #buttons {
+        margin: 5px auto;
+    }
     #settings button {
         width: 45%;
+    }
+    
+    #dayTraffic,
+    #mobileUsers,
+    #newMembers,
+    #recentAct {
+        border-top: 1px solid #dfdfdf;
+        border-bottom: 1px solid #dfdfdf;
+    }
+    
+    #dayTraffic,
+    #newMembers,
+    #messageUser {
+        border-right: 1px solid #dfdfdf;
     }
 }
