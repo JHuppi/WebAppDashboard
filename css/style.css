@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    /*border: black solid 1px;*/
 }
 
 body {
@@ -32,6 +31,8 @@ ul {
 #header {
     display: flex;
     padding: 1.12em;
+    flex-direction: column;
+    align-items: center;
 }
 
 .headerChild {
@@ -40,8 +41,12 @@ ul {
 }
 
 #logo {
-    margin-right: auto;
+    margin-bottom: .606em;
     font-size: 1.12em;
+}
+
+#userInfo {
+    display: flex;
 }
 
 #notification {
@@ -88,7 +93,12 @@ ul {
 }
 
 img.icon {
-    width: 32px;   
+    width: 34.25px; 
+    padding: 2.25px;  
+}
+
+#dashIcon {
+    border-left: #81ca8f 2px solid;
 }
 
 #memIcon,
@@ -173,6 +183,32 @@ img.icon {
 }
 
 /*Traffic*/
+#trafficBanner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#trafficBanner h2 {
+    margin-right: auto;
+}
+
+#timePeriod {    
+    width: 33.3%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+#timePeriod li {
+    padding: 5px;
+}
+#timePeriod li.selected {
+    border-radius: 5px;
+    background-color: #81ca8f;
+    color: #fff;
+}
+
 #trafficChart {
     padding: 1.25%;
 }
@@ -233,13 +269,48 @@ ul.doughnut-legend li {
     margin-right: 5px;
 }
 
-.socialIcon #Layer_1 {
+svg.Layer_1 {
     margin: auto;
     width: 32px;
     height: 32px;
     fill: #fff;
 }
 /*Social End*/
+
+/*New Members*/
+.memberDiv:nth-of-type(1n+2) {
+    border-top: 1px solid #d2d2d2;
+}
+
+.memberDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 0;
+    justify-content: space-between;
+}
+
+.memberImg {
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+/*Recent Activity*/
+.activityDiv:nth-of-type(1n+2) {
+    border-top: 1px solid #d2d2d2;
+}
+
+.activityDiv {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    justify-content: space-between;
+}
+
+.activityIcon {
+    height: 32px;
+    width: 32px;
+}
 
 /*Message User*/
 #messageUser input,
@@ -333,6 +404,10 @@ h3 {
     background-color: #4d4d72;
 }
 
+.memberEMail {
+    color: #7477bf;
+}
+
 select {
     color: #959595;
 }
@@ -393,6 +468,13 @@ button {
 }
 
 @media (min-width: 768px) {
+    #header {
+        flex-direction: row;
+    }
+    #logo {
+        margin: 0 auto 0 0;
+    }
+    
     #main {
         flex-direction: row;
     }
@@ -450,6 +532,10 @@ button {
         width: 50%;
     }
     
+    #trafficBanner {
+        flex-direction: row;
+    }
+    
     ul.doughnut-legend span {
         margin-right: 8px;
     }
@@ -462,6 +548,11 @@ button {
     #faceStats,
     #gplusStats {
         width: 30%;
+    }
+    
+    .memberJoinDate,
+    .activityIcon {
+        margin-left: auto;
     }
     
     #mConfirmation {
