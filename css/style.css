@@ -208,6 +208,9 @@ img.icon {
     background-color: #81ca8f;
     color: #fff;
 }
+#timePeriod li:hover {
+    cursor: pointer;
+}
 
 #trafficChart {
     padding: 1.25%;
@@ -332,6 +335,10 @@ button {
 /*Message End*/
 
 /*Settings*/
+input[type=checkbox] {
+    display: none;
+}
+
 .toggle {
     width: 95%;
     font-weight: 600;
